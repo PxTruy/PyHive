@@ -221,6 +221,7 @@ class Connection(object):
                         sasl_client.setAttr('host', host)
                     if sasl_auth == 'GSSAPI':
                         sasl_client.setAttr('service', kerberos_service_name)
+                        sasl_client.setAttr('maxbufsize', 2*1024*1024)
                     elif sasl_auth == 'PLAIN':
                         sasl_client.setAttr('username', username)
                         sasl_client.setAttr('password', password)
